@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="menu" type="menuType"/>
+  <xs:complexType name="itemType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Bread Sticks"/>
+            <xs:enumeration value="Salad"/>
+            <xs:enumeration value="Soup"/>
+            <xs:enumeration value="Burger"/>
+            <xs:enumeration value="Steak"/>
+            <xs:enumeration value="Pasta"/>
+            <xs:enumeration value="Ice cream"/>
+            <xs:enumeration value="Cake"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="price">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="0.30"/>
+            <xs:enumeration value="5.40"/>
+            <xs:enumeration value="2.30"/>
+            <xs:enumeration value="8.30"/>
+            <xs:enumeration value="12.40"/>
+            <xs:enumeration value="6.40"/>
+            <xs:enumeration value="3.60"/>
+            <xs:enumeration value="1.50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="description">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Something to fill you up while you wait."/>
+            <xs:enumeration value="A very fancy salad."/>
+            <xs:enumeration value="Leek and onion soup"/>
+            <xs:enumeration value="Just beef and a bun"/>
+            <xs:enumeration value="Some mammal meat"/>
+            <xs:enumeration value="Italian? Maybe."/>
+            <xs:enumeration value="It's cold, okay?"/>
+            <xs:enumeration value="Whatever was reduced in Co-op"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="category" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="menuType">
+    <xs:sequence>
+      <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

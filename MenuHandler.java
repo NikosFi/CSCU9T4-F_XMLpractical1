@@ -1,6 +1,9 @@
 import org.xml.sax.*;				// import SAX classes
 import org.xml.sax.helpers.*;		// import SAX helper classes
 
+import java.util.ArrayList;
+import java.util.Set;
+
 /**
   SAX event handler to output in basic format.
 
@@ -14,7 +17,7 @@ public class MenuHandler extends DefaultHandler {
     @param ch			character data
     @param start		character start index
     @param length		character count
-    @throws			    SAX exception
+    @throws			    SAXException
   */
   public void characters(char ch[], int start, int length) {
     String characters = new String(ch, start, length).trim();
@@ -51,6 +54,7 @@ public class MenuHandler extends DefaultHandler {
   */
   public void startDocument() throws SAXException {
     System.out.println("startDocument callback");
+
   }
 
   /**
